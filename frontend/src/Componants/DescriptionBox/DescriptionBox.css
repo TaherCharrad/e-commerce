@@ -1,0 +1,27 @@
+.description-box{
+    margin: 120px 170px;
+}
+.navigator{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.nav-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 600;
+    width: 171px;
+    height: 70px;
+    border: none;
+    background: #d0d0d0;
+    color: white;
+}
+.description{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    border: 1px solid #d0d0d0;
+    padding: 50px;
+}

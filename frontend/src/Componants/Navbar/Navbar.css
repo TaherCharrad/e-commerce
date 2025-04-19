@@ -1,0 +1,82 @@
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    padding: 16px;
+    box-shadow: 0 1px 3px -2px black;
+}
+.nav-logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.nav-logo p{
+    font-size: 40px;
+    font-weight: 500;
+}
+.nav-menu{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 80px;
+    font-size: 20px;
+    font-weight: 500;
+}
+.nav-menu li{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    gap: 3px;
+    cursor: pointer;
+}
+.nav-menu li a, 
+.nav-menu li a:visited, 
+.nav-menu li a:active, 
+.nav-menu li a:focus {
+    color: inherit;
+    text-decoration: none;
+}
+.nav-menu hr{
+    background-color: #7c008a;
+    border: none;
+    width: 80%;
+    height: 3px;
+    border-radius: 10px;
+}
+.nav-login-cart{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.nav-login-cart button{
+    width: 150px;
+    height: 60px;
+    outline: none;
+    border: 1px solid rgb(189, 187, 187);
+    color: rgb(147, 145, 145);
+    background-color: white;
+    border-radius: 25px;
+    font-size: 20px;
+    font-weight: 500;
+    transition: 0.3s ease-in;
+}
+.nav-login-cart button:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    transform: scale(1.08);
+    transition: 0.3s;
+}
+.nav-cart-count{
+    width: 22px;
+    height: 22px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: -35px;
+    margin-left: -55px;
+    border-radius: 11px;
+    font-size: 14px;
+    background: red;
+    color: white;
+}
