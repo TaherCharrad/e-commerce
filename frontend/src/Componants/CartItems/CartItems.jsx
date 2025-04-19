@@ -64,7 +64,7 @@ const CartItems = () => {
                             <h3>${getTotalCartAmount()}</h3>
                         </div>
                     </div>
-                    <Link to="/"><button onClick={handleCheckout}>CHECKOUT</button></Link>
+                    <Link to="/thank_you"><button onClick={handleCheckout}>CHECKOUT</button></Link>
                 </div>
                 <div className="promocode">
                     <p>ENTER PROMO CODE HERE : </p>

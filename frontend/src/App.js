@@ -10,6 +10,7 @@ import Footer from './Componants/Footer/Footer.jsx';
 import men_banner from './Componants/Assets/banner_mens.png';
 import women_banner from './Componants/Assets/banner_women.png';
 import kids_banner from './Componants/Assets/banner_kids.png';
+import ThankYou from './Pages/ThankYou.jsx';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path = '/cart' element = {<Cart/>}/>
           <Route path = '/SignUp' element = {<SignUp/>}/>
           <Route path = '/Login' element = {<Login/>}/>
+          <Route path = '/thank_you' element = {<ThankYou/>}/>
         </Routes>
         <Footer/>
       </BrowserRouter>
