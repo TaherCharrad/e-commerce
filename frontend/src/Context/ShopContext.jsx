@@ -12,7 +12,7 @@ const ShopContextProvider = (props) => {
                 (item) => item.id === product.id && item.size === product.size
             );
             
-            if (existingItemIndex !== -1) {
+            if (existingItemIndex !== -1){
                 const updatedItems = [...prev];
                 updatedItems[existingItemIndex] = {
                     ...updatedItems[existingItemIndex],

@@ -11,6 +11,8 @@ import men_banner from './Componants/Assets/banner_mens.png';
 import women_banner from './Componants/Assets/banner_women.png';
 import kids_banner from './Componants/Assets/banner_kids.png';
 import ThankYou from './Pages/ThankYou.jsx';
+import Profile from './Pages/Profile.jsx';
+import ChangePassword from './Pages/ChangePassword.jsx';
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
           <Route path = '/SignUp' element = {<SignUp/>}/>
           <Route path = '/Login' element = {<Login/>}/>
           <Route path = '/thank_you' element = {<ThankYou/>}/>
+          <Route path = '/profile' element = {<Profile/>}/>
+          <Route path = '/change_password' element = {<ChangePassword/>}/>
         </Routes>
         <Footer/>
       </BrowserRouter>

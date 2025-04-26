@@ -1,38 +1,42 @@
-import { useState, useContext } from 'react';
+import React, { useState, useContext } from 'react';
+import './Login.css';
+import { UserContext } from '../Context/UserContext';
 import { Link, useNavigate } from 'react-router-dom';
-import "./Login.css";
-import email_icon from "../Componants/Assets/email.png";
-import password_icon from "../Componants/Assets/password.png";
-import { UserContext } from "../Context/UserContext";
+import email_icon from '../Componants/Assets/email.png';
+import password_icon from '../Componants/Assets/password.png';
 
 const Login = () => {
+  const { login } = useContext(UserContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
-  const { login } = useContext(UserContext);
 
-  const handleLogin = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setError('');
+
     try {
       const response = await fetch('http://localhost:5000/login', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password })
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
       });
 
       const data = await response.json();
+      console.log(data.user);
 
-      if (!data.success) {
-        setError(data.message);
-        setEmail('');
-        setPassword('');
-      } else {
-        login({ email: data.email });
+      if (response.ok) {
+        login( data.user );
         navigate('/');
+      } else {
+        setError(data.message);
       }
     } catch (err) {
-      setError('Connection error');
+      console.error(err);
+      setError('Something went wrong');
     }
   };
 
@@ -44,22 +48,22 @@ const Login = () => {
       </div>
 
       <div className="inputs">
-        <form onSubmit={handleLogin}>
+        <form onSubmit={handleSubmit}>
           <div className="input">
-            <img src={email_icon} alt="Email icon" />
-            <input 
-              type="email" 
+            <img src={email_icon} alt="" />
+            <input
+              type="email"
               placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
             />
           </div>
-          
+
           <div className="input">
-            <img src={password_icon} alt="Password icon" />
-            <input 
-              type="password" 
+            <img src={password_icon} alt="" />
+            <input
+              type="password"
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -73,9 +77,9 @@ const Login = () => {
         </form>
 
         <h2>
-          Don't have an account? 
-          <Link to="/SignUp" className="link">
-            <span> Sign up </span>
+          Don't have an account?{' '}
+          <Link to="/signup" className="link">
+            <span>Sign up</span>
           </Link>
         </h2>
       </div>
